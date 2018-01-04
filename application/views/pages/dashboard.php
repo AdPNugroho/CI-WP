@@ -82,25 +82,24 @@
 							</div>
 							<div class="box-body table-bordered no-padding">
 								<table class="table table-hover">
-									<tbody>
+									<thead>
 										<tr>
 											<th>ID</th>
 											<th>Name</th>
 											<th>Type Criteria</th>
 											<th>Value Criteria</th>
 										</tr>
-										<tr>
-											<td>183</td>
-											<td>John Doe</td>
-											<td>11-7-2014</td>
-											<td>Benefit</td>
-										</tr>
-										<tr>
-											<td>219</td>
-											<td>Alexander Pierce</td>
-											<td>11-7-2014</td>
-											<td>Benefit</td>
-										</tr>
+									</thead>
+									<tbody>
+										<?php
+											if($dataCriteria->num_rows()>0){
+												foreach($dataCriteria->result() as $row){
+													echo "<tr><td>".$row->id_kriteria."</td><td>".$row->nama_kriteria."</td><td>".$row->type_kriteria."</td><td>".$row->nilai_kriteria."</td></tr>";
+												}
+											}else{
+												echo "<tr><td colspan='4'><center>No data available</center></td></tr>";
+											}
+										?>
 									</tbody>
 								</table>
 							</div>
@@ -113,19 +112,22 @@
 							</div>
 							<div class="box-body table-bordered no-padding">
 								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>ID Alternative</th>
+											<th>Name Alternative</th>
+										</tr>
+									</thead>
 									<tbody>
-										<tr>
-											<th>ID</th>
-											<th>Name</th>
-										</tr>
-										<tr>
-											<td>183</td>
-											<td>John Doe</td>
-										</tr>
-										<tr>
-											<td>219</td>
-											<td>Alexander Pierce</td>
-										</tr>
+										<?php
+											if($dataAlternative->num_rows()>0){
+												foreach($dataAlternative->result() as $row){
+													echo "<tr><td>".$row->id_alternatif."</td><td>".$row->nama_alternatif."</td></tr>";
+												}
+											}else{
+												echo "<tr><td colspan='2'><center>No data available</center></td></tr>";
+											}
+										?>
 									</tbody>
 								</table>
 							</div>

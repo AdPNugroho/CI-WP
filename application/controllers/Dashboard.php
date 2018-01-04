@@ -11,7 +11,9 @@ class Dashboard extends CI_Controller {
             'title'=>'Dashboard',
             'pages'=>'dashboard',
             'criteria'=>$this->data_control->countTable('tbl_kriteria'),
-            'alternative'=>$this->data_control->countTable('tbl_alternatif')
+            'alternative'=>$this->data_control->countTable('tbl_alternatif'),
+            'dataAlternative'=>$this->data_control->getAll('tbl_alternatif'),
+            'dataCriteria'=>$this->data_control->getAll('tbl_kriteria')
         );
 		$this->load->view('component/header',$data);
 		$this->load->view('component/navigation',$data);
