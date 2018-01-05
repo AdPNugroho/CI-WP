@@ -23,28 +23,8 @@
 					</div>
 					<div class="box-body table-bordered no-padding">
 						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Criteria 1</th>
-									<th>Criteria 2</th>
-									<th>Criteria 3</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander Pierce</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-							</tbody>
+							<thead id="theadEvaluation"></thead>
+							<tbody id="tbodyEvaluation"></tbody>
 						</table>
 					</div>
 				</div>
@@ -61,11 +41,34 @@
 					<h4 class="modal-title">Edit Evaluation Alternative</h4>
 				</div>
 				<div class="modal-body">
-					<p>One fine body&hellip;</p>
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td>ID Alternative</td>
+								<td><input type="text" id="idAlternativeTable" class="form-control" readonly></td>
+							</tr>
+							<tr>
+								<td>Alternative Name</td>
+								<td><input type="text" id="nameAlternativeTable" class="form-control" readonly></td>
+							</tr>
+						</tbody>
+					</table>
+					<form id="formEvaluationEdit">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width: 10px">#</th>
+									<th>Criteria Name</th>
+									<th>Evaluation</th>
+								</tr>
+							</thead>
+							<tbody id="bodyModalEvaluation"></tbody>
+						</table>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Update</button>
+					<button type="button" class="btn btn-primary" id="save">Update</button>
 				</div>
 			</div>
 		</div>

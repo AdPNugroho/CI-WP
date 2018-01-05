@@ -18,19 +18,31 @@ class Criteria extends CI_Controller {
         $this->load->view('pages/criteria',$data);
 		$this->load->view('component/footer',$data);
     }
-    private function dataCriteria(){
-
+    public function dataCriteria(){
+        echo json_encode($this->data_control->getAll('tbl_kriteria')->result());
     }
-    private function addCriteria(){
-
+    public function addCriteria(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->saveData($data,'tbl_kriteria','tbl_alternatif','id_kriteria','id_alternatif'));
     }
-    private function updateCriteria(){
-
+    public function updateCriteria(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->updateData($data,'id_kriteria','tbl_kriteria'));
     }
-    private function deleteCriteria(){
-
+    public function deleteCriteria(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->deleteData($data,'tbl_kriteria'));
     }
-    private function selectCriteria(){
-        
+    public function selectCriteria(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->getData($data,'tbl_kriteria'));
     }
 }

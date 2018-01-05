@@ -18,19 +18,32 @@ class Alternative extends CI_Controller {
 		$this->load->view('pages/alternative',$data);   
 		$this->load->view('component/footer',$data);
     }
-    private function dataAlternative(){
+    public function dataAlternative(){
+        echo json_encode($this->data_control->getAll('tbl_alternatif')->result());
+    }
+    public function addAlternative(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->saveData($data,'tbl_alternatif','tbl_kriteria','id_alternatif','id_kriteria'));
+    }
+    public function updateAlternative(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->updateData($data,'id_alternatif','tbl_alternatif'));
+    }
+    public function deleteAlternative(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->deleteData($data,'tbl_alternatif'));
 
     }
-    private function addAlternative(){
-
-    }
-    private function updateAlternative(){
-
-    }
-    private function deleteAlternative(){
-
-    }
-    private function selectAlternative(){
-        
+    public function selectAlternative(){
+        foreach($_POST as $key => $value){
+            $data[$key] = $this->input->post($key,TRUE);
+        }
+        echo json_encode($this->data_control->getData($data,'tbl_alternatif'));
     }
 }

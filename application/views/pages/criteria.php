@@ -21,34 +21,21 @@
 					<div class="box-header">
 						<h3 class="box-title">List Criteria</h3>
 						<div class="pull-right box-tools">
-							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-edit-criteria">
-								<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp; Add Criteria</button>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-add-criteria" id="add"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp; Add Criteria</button>
 						</div>
 					</div>
 					<div class="box-body table-bordered no-padding">
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>ID</th>
+									<th style="width:10px">ID</th>
 									<th>Name</th>
 									<th>Type Criteria</th>
 									<th>Score Criteria</th>
+									<th style="width:100px">Action</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander Pierce</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-							</tbody>
+							<tbody id="tbodyCriteria"></tbody>
 						</table>
 					</div>
 				</div>
@@ -70,13 +57,13 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Criteria Name</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" placeholder="Criteria Name for Decision Making" name="criteria_name">
+									<input type="text" class="form-control" placeholder="Criteria Name for Decision Making" name="nama_kriteria">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Type Criteria</label>
 								<div class="col-sm-9">
-									<select class="form-control" name="type_criteria">
+									<select class="form-control" name="type_kriteria">
 										<option value="benefit">Benefit</option>
 										<option value="cost">Cost</option>
 									</select>
@@ -85,7 +72,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Weight Criteria</label>
 								<div class="col-sm-9">
-									<select class="form-control" name="weight_criteria">
+									<select class="form-control" name="nilai_kriteria">
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -99,7 +86,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-primary" id="save">Save</button>
 				</div>
 			</div>
 		</div>
@@ -119,19 +106,19 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">ID Criteria</label>
 								<div class="col-sm-9">
-									<input type="text" id="criteriaName" class="form-control" readonly name="id_criteria">
+									<input type="text" id="criteriaID" class="form-control" readonly name="id_kriteria">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Criteria Name</label>
 								<div class="col-sm-9">
-									<input type="text" id="criteriaName" class="form-control" placeholder="Criteria Name for Decision Making" name="criteria_name">
+									<input type="text" id="criteriaName" class="form-control" placeholder="Criteria Name for Decision Making" name="nama_kriteria">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Type Criteria</label>
 								<div class="col-sm-9">
-									<select class="form-control" id="typeCriteria" name="type_criteria">
+									<select class="form-control" id="typeCriteria" name="type_kriteria">
 										<option value="benefit">Benefit</option>
 										<option value="cost">Cost</option>
 									</select>
@@ -140,7 +127,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Weight Criteria</label>
 								<div class="col-sm-9">
-									<select class="form-control" id="weightCriteria" name="weight_criteria">
+									<select class="form-control" id="weightCriteria" name="nilai_kriteria">
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -154,7 +141,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Update</button>
+					<button type="button" class="btn btn-primary" id="saveUpdate">Update</button>
 				</div>
 			</div>
 		</div>

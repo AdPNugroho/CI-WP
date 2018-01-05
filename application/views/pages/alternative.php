@@ -21,7 +21,7 @@
 					<div class="box-header">
 						<h3 class="box-title">List Alternative</h3>
 						<div class="pull-right box-tools">
-							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-add-alternative">
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-add-alternative" id="add">
 								<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp; Add Alternative</button>
 						</div>
 					</div>
@@ -29,20 +29,12 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>ID</th>
+									<th style="width:10px">ID</th>
 									<th>Name</th>
+									<th style="width:100px">Action</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander Pierce</td>
-								</tr>
-							</tbody>
+							<tbody id="tbodyAlternative"></tbody>
 						</table>
 					</div>
 				</div>
@@ -65,7 +57,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Alternative Name</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" placeholder="Alternative Name for Decision Making" name="alternative_name"> 
+									<input type="text" class="form-control" placeholder="Alternative Name for Decision Making" name="nama_alternatif"> 
 								</div>
 							</div>
 						</div>
@@ -73,7 +65,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-primary" id="save">Save</button>
 				</div>
 			</div>
 		</div>
@@ -93,13 +85,13 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">ID Alternative</label>
 								<div class="col-sm-9">
-									<input type="text" id="idAlternative" class="form-control" readonly name="id_alternative">
+									<input type="text" id="idAlternative" class="form-control" readonly name="id_alternatif">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Alternative Name</label>
 								<div class="col-sm-9">
-									<input type="text" id="alternativeName" class="form-control" placeholder="Alternative Name for Decision Making" name="alternative_name">
+									<input type="text" id="alternativeName" class="form-control" placeholder="Alternative Name for Decision Making" name="nama_alternatif">
 								</div>
 							</div>
 						</div>
@@ -107,7 +99,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Update</button>
+					<button type="button" class="btn btn-primary" id="saveUpdate">Update</button>
 				</div>
 			</div>
 		</div>

@@ -52,3 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['alternative/data'] = 'alternative/dataAlternative';
+$route['alternative/save'] = 'alternative/addAlternative';
+$route['alternative/get'] = 'alternative/selectAlternative';
+$route['alternative/delete'] = 'alternative/deleteAlternative';
+$route['alternative/update'] = 'alternative/updateAlternative';
+
+$route['criteria/data'] = 'criteria/dataCriteria';
+$route['criteria/save'] = 'criteria/addCriteria';
+$route['criteria/get'] = 'criteria/selectCriteria';
+$route['criteria/delete'] = 'criteria/deleteCriteria';
+$route['criteria/update'] = 'criteria/updateCriteria';
+
+$route['evaluation/data'] = 'evaluation/dataEvaluation';
+$route['evaluation/get'] = 'evaluation/selectEvaluation';
+$route['evaluation/update'] = 'evaluation/updateEvaluation';
