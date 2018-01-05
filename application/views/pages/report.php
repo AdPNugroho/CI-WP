@@ -23,28 +23,20 @@
 					</div>
 					<div class="box-body table-bordered no-padding">
 						<table class="table table-hover">
-							<tbody>
+							<thead>
 								<tr>
-									<th>ID</th>
 									<th>Name</th>
 									<th>Value Criteria</th>
 									<th>Type Criteria</th>
 									<th>Normalization</th>
 								</tr>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander Pierce</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach($normalization as $value){
+										echo "<tr><td>".$value['nama']."</td><td>".$value['bobot']."</td><td>".$value['type']."</td><td>".$value['normalisasi']."</td></tr>";
+									}
+								?>
 							</tbody>
 						</table>
 					</div>
@@ -57,25 +49,19 @@
 					</div>
 					<div class="box-body table-bordered no-padding">
 						<table class="table table-hover">
-							<tbody>
+							<thead>
 								<tr>
 									<th>Name</th>
 									<th>Vector S</th>
 									<th>Vector V</th>
-									<th>Ranking</th>
 								</tr>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander Pierce</td>
-									<td>11-7-2014</td>
-									<td>11-7-2014</td>
-								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach($preferensi as $value){
+										echo "<tr><td>".$value['nama']."</td><td>".$value['vektor_s']."</td><td>".$value['vektor_v']."</td></tr>";
+									}
+								?>
 							</tbody>
 						</table>
 					</div>
